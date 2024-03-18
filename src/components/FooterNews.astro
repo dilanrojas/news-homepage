@@ -1,0 +1,94 @@
+<div class="grid-spacer"></div>
+
+<div class="new-01 footer-new">
+  <a href="#">
+    <img src="/image-retro-pcs.jpg" alt="Imagen de PCs retro">
+  </a>
+  <div class="footer-new-description">
+    <h1>01</h1>
+    <a href="#">Reviving Retro PCs</a>
+    <p>
+      What happens when old PCs are given modern upgrades?
+    </p>
+  </div>
+</div>
+
+<div class="new-02 footer-new">
+  <a href="#">
+    <img src="/image-top-laptops.jpg" alt="Imagen de PCs retro">
+  </a>
+  <div class="footer-new-description">
+    <h1>02</h1>
+    <a href="#">Top 10 Laptops of 2022</a>
+    <p>
+      Our best picks for various needs and budgets.
+    </p>
+  </div>
+</div>
+
+<div class="new-03 footer-new">
+  <a href="#">
+    <img src="/image-gaming-growth.jpg" alt="Imagen de PCs retro">
+  </a>
+  <div class="footer-new-description">
+    <h1>03</h1>
+    <a href="#">The Growth of Gaming</a>
+    <p>
+      How the pandemic has sparked fresh opportunities.
+    </p>
+  </div>
+</div>
+
+<style>
+  .grid-spacer {
+    grid-column: 1 / 4;
+    height: .19em;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .footer-new {
+    display: flex;
+    gap: 1.2em;
+  }
+
+  .footer-new img {
+    cursor: pointer;
+    width: 100px;
+    height: 127px;
+    aspect-ratio: 100/127
+  }
+
+  .footer-new h1 {
+    font-size: var(--fs-700);
+    color: var(--clr-gray-blue);
+  }
+
+  .footer-new a {
+    font-size: var(--fs-500);
+    color: var(--clr-dark-blue);
+    font-weight: var(--fw-semibold);
+    transition: .1s ease;
+  }
+
+  .footer-new a:hover {
+    color: var(--clr-soft-red);
+  }
+
+  .footer-new p {
+    color: var(--clr-dark-gray-blue);
+  }
+
+  .footer-new-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media(max-width: 1040px) {
+    .grid-spacer {
+      display: none;
+    }
+  }
+
+</style>

@@ -1,0 +1,112 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+	:root {
+		--clr-off-white: hsl(36, 100%, 99%);
+		--clr-gray-blue: hsl(233, 8%, 79%);
+		--clr-dark-gray-blue: hsl(236, 13%, 42%);
+		--clr-dark-blue: hsl(240, 100%, 5%);
+		--clr-soft-orange: hsl(35, 77%, 62%);
+		--clr-soft-red: hsl(5, 85%, 63%);
+
+		--fs-100: .25rem;
+		--fs-150: .40rem;
+		--fs-200: .50rem;
+		--fs-250: .75rem;
+		--fs-300: .8rem;
+		--fs-350: .9rem;
+		--fs-400: 1rem;
+		--fs-450: 1.125rem;
+		--fs-500: 1.25rem;
+		--fs-550: 1.4rem;
+		--fs-600: 1.6rem;
+		--fs-650: 1.7rem;
+		--fs-700: 2rem;
+		--fs-750: 2.2rem;
+		--fs-800: 2.5rem;
+		--fs-850: 2.8rem;
+		--fs-900: 3rem;
+		--fs-950: 3.6rem;
+
+		--ff-html: "Inter", sans-serif;
+
+		--fw-regular: 400;
+		--fw-semibold: 700;
+		--fw-bold: 800;
+	}
+
+	main {
+		padding-bottom: 5rem;
+	}
+
+	*,*::after,*::before {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		line-height: 1;
+	}
+
+	html {
+		font-family: var(--ff-html);
+		font-size: 15px;
+		scroll-behavior: smooth;
+		line-height: 1.5;
+		color: var(--clr-dark-blue);
+	}
+
+	body {
+		background-color: var(--clr-off-white);
+	}
+
+	ul[role="list"],
+	ol[role="list"] {
+		list-style-type: none;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+
+	/* Utility */
+	.container {
+		--max-width: 1100px;
+		--padding: 1rem;
+
+		width: min(var(--max-width), 100% - (var(--padding) * 2));
+		margin-inline: auto;
+	}
+
+	:where(.flow > * + *) {
+  	margin-top: var(--flow-space, 1em);
+	}
+
+</style>

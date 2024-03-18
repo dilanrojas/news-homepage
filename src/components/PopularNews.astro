@@ -1,0 +1,69 @@
+<div class="popular-news">
+  <h1>New</h1>
+
+  <div class="flow" style="--flow-space: .8em">
+    <a href="#"><h2>Hydrogen VS Electric Cars</h2></a>
+    <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+  </div>
+
+  <hr>
+
+  <div class="flow" style="--flow-space: .8em">
+    <a href="#"><h2>The Downsides of AI Artistry</h2></a>
+    <p>What are the possible adverse effects of on-demand AI image generation?</p>
+  </div>
+
+  <hr>
+
+  <div class="flow" style="--flow-space: .8em">
+    <a href="#"><h2>Is VC Funding Drying Up?</h2></a>
+    <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+  </div>
+</div>
+
+<style>
+  .popular-news {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-off-white);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.2em 1.5em;
+  }
+
+  .popular-news h1 {
+    font-size: var(--fs-800);
+    color: var(--clr-soft-orange);
+  }
+
+  .popular-news h2 {
+    font-size: var(--fs-550)
+  }
+
+  .popular-news a {
+    color: var(--clr-off-white);
+    transition: color .1s ease;
+  }
+
+  .popular-news a:hover {
+    color: var(--clr-soft-orange);
+  }
+
+  .popular-news p {
+    color: var(--clr-gray-blue)
+  }
+
+  hr {
+    border: 1px solid var(--clr-dark-gray-blue)
+  }
+
+  @media(max-width: 1040px) {
+    .popular-news {
+      gap: 2em;
+    }
+  }
+
+</style>

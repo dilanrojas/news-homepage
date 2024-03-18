@@ -1,0 +1,146 @@
+---
+import Logo from '../components/Logo.astro'
+---
+
+<header>
+  <div class="dim-background"></div>
+  <div class="nav-wrapper container">
+    <Logo
+      class="logo"
+      height="40"
+      width="65"
+      fill="#00001A"
+    />
+    <ul role="list" class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Categories</a></li>
+    </ul>
+    <div class="mobile-nav-toggle">
+      <img class="mobile-nav-close" src="/icon-menu-close.svg" alt="Cerrar barra de navegación" height="31" width="32">
+      <img class="mobile-nav-open" src="/icon-menu.svg" alt="Abrir barra de navegación" height="17" width="40">
+    </div>
+  </div>
+</header>
+
+<style>
+  html[data-overlay] {
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  .nav-wrapper {
+    padding-top: 85px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2.2em;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .nav-list a {
+    color: var(--clr-dark-gray-blue);
+    transition: color .06s ease-out;
+    font-size: var(--fs-450);
+  }
+
+  .nav-list a:hover {
+    color: var(--clr-soft-red);
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  .mobile-nav-toggle img {
+    cursor: pointer;
+  }
+
+  .mobile-nav-close {
+    display: none;
+    z-index: 40;
+  }
+
+  .dim-background {
+    display: none;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    background-color: rgb(0, 0, 0, .5);
+  }
+
+  @media(max-width: 650px) {
+    .nav-list {
+      flex-direction: column;
+      position: fixed;
+      justify-content: start;
+      align-items: start;
+      top: 0;
+      padding-top: 120px;
+      padding-left: 25px;
+      right: -500px;
+      width: 300px;
+      height: 100%;
+      background-color: var(--clr-off-white);
+      box-shadow: 0px 0px 10px rgb(0, 0, 0, .5);
+      transition: right .2s ease;
+      z-index: 30;
+    }
+
+    .nav-list a {
+      font-size: var(--fs-500);
+      color: var(--clr-dark-blue);
+    }
+
+    .nav-list.active {
+      right: 0;
+    }
+
+    .nav-wrapper {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+    .mobile-nav-toggle {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+  }
+
+</style>
+
+<script>
+  const menuOpen = document.querySelector(".mobile-nav-open") as HTMLElement
+  const menuClose = document.querySelector(".mobile-nav-close") as HTMLElement
+  const dimBackground = document.querySelector(".dim-background") as HTMLElement
+  const html = document.querySelector('html') as HTMLElement
+  const mobileMenu = document.querySelector(".nav-list")
+
+  menuOpen.addEventListener("click", () => {
+    menuOpen.style.display = "none";
+    menuClose.style.display = "block";
+    mobileMenu.classList.add("active");
+    dimBackground.style.display = "block";
+    html.toggleAttribute('data-overlay');
+  })
+
+  menuClose.addEventListener("click", () => {
+    menuClose.style.display = "none";
+    menuOpen.style.display = "block";
+    mobileMenu.classList.remove("active");
+    dimBackground.style.display = "none";
+    html.removeAttribute('data-overlay');
+  })
+
+</script>

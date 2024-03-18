@@ -1,0 +1,30 @@
+---
+import Web3Card from "./Web3Card.astro"
+import PopularNews from "./PopularNews.astro"
+import FooterNews from "./FooterNews.astro"
+---
+
+<section class="home-news container">
+
+  <Web3Card />
+  <PopularNews />
+  
+  <FooterNews />
+
+</section>
+
+<style>
+  .home-news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
+    gap: 2em;
+  }
+
+  @media(max-width: 1040px) {
+    .home-news {
+      display: flex;
+      flex-direction: column;
+      gap: 2em
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 ## Demo
 
-You can view a live demo [here](https://news-homepage-main-50k.pages.dev)
+You can view a live demo [here](https://news-homepage-bo9.pages.dev/)
 
 ## Technologies Used
 
